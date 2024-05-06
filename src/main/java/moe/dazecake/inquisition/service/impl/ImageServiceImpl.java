@@ -194,8 +194,8 @@ public class ImageServiceImpl implements ImageService {
             var uploadUrl = chfsUrl + "/chfs/upload";
             var uploadRequestBody = new MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
-                    .addFormDataPart("file", fileName + ".png", RequestBody.create(file, MediaType.parse("image/png")))
                     .addFormDataPart("folder", chfsUploadDir)
+                    .addFormDataPart("file", fileName + ".png", RequestBody.create(file, MediaType.parse("image/png")))
                     .build();
             var uploadRequest = new Request.Builder()
                     .url(uploadUrl)
